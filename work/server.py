@@ -22,19 +22,20 @@ while True:
     # Wait for next request from client
     print('服务器开始工作了')
     date1 = socket.recv_json()
-    print(date1)
-    message = json.dumps(date1)
-    print(message)
+
+    # print(date1)
+
+    message = date1
+    # print(message)
     #   str = simplyParticiple.participle(message)
     str = synonym.Result(message)
-    print(type(str))
-    print(str)
+    # print(type(str))
+    # print(str)
     # Do some 'work'
     time.sleep(0.5)  # Do some 'work'
     # Send reply back to client
     key = match.match(str)
-    print(type(key))
-    print(key)
-    date2 = json.loads(key)
-    print(date2)
-    socket.send_json(date2)
+    # print(key)
+    # date2 = json.dumps(key)
+    # print(date2)
+    socket.send_json(key)

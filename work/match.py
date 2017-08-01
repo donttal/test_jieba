@@ -1,3 +1,4 @@
+from io import BufferedReader
 def match (participle):
     "输入相应的关键字段，返回取到的md文件"
     dict = {}
@@ -8,5 +9,5 @@ def match (participle):
     if dict.get(participle) is not None:
         return dict[participle]
     else:
-        return '抱歉，没有找到对应答案'
+        return 'cant find answer'
 

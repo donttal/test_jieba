@@ -1,12 +1,13 @@
 import jieba.analyse
 import codecs,sys
+from io import BufferedReader
 from work import simplyParticiple
 
 def Synonym():  #同义词函数
     seperate_word = {}
     dict1={}
     i=0
-    file = codecs.open("same_word.txt","r","utf-8")  # 这是同义词库
+    file = codecs.open("same_word.txt","r","utf-8") # 这是同义词库
     lines = file.readlines()  # 读取全部内容
     for line in lines:
         seperate_word[i] = line.split()  # 同义词放入字典seperate_word中
@@ -26,7 +27,10 @@ def  Cut_Word(txt):    #txt是要分的问题,这个函数用于分词    如果
 
 def Result(txt):
     final_sentence=""
-    line_2 =simplyParticiple. participle(txt).split("/")
+    line = simplyParticiple. participle(txt)
+    print(line)
+    print(type(line))
+    line_2 =line.split("/")
    # line_2=Cut_Word(txt).split("/")
     print(line_2)
     dict1=Synonym()
