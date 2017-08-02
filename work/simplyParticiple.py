@@ -10,7 +10,7 @@ import jieba.analyse
 from optparse import OptionParser
 
 # 新增关键词
-jieba.add_word('信息的定义')
+jieba.add_word('信息定义')
 
 
 USAGE = "usage:    python extract_tags_with_weight.py [file name] -k [top k]"
@@ -29,7 +29,12 @@ jieba.analyse.set_stop_words("stop_words.txt")  # 关键词提取所使用停止
 
 def participle (content):
     tags = jieba.analyse.extract_tags(content, topK=topK)
+
+
+    print(tags)
     str = '/'.join(tags)
     return str
 
 
+context = participle('为什么不确定性越小，信息量越多，信息熵越小')
+print(context)

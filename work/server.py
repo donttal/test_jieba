@@ -25,16 +25,17 @@ while True:
 
     # print(date1)
 
-    message = date1
+    message = json.loads(date1)
+    print(message)
     # print(message)
     #   str = simplyParticiple.participle(message)
-    str = synonym.Result(message)
+    list_final = synonym.result(message) #保存字符串
     # print(type(str))
     # print(str)
     # Do some 'work'
     time.sleep(0.5)  # Do some 'work'
     # Send reply back to client
-    key = match.match(str)
+    key = match.match(list_final)
     # print(key)
     # date2 = json.dumps(key)
     # print(date2)

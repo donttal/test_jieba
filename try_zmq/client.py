@@ -9,7 +9,7 @@ socket.connect ("tcp://localhost:5555")
 # Do 10 requests, waiting each time for a response
 for request in range (1,10):
     print("Sending request ", request,"...")
-    content = 'ddd'
+    content = '信息的定义是什么'
     data1 = json.dumps(content)
     socket.send_json(data1)
     # Get the reply.
