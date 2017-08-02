@@ -6,8 +6,11 @@ def match (participle):
         for row in file:
             r = row.strip().split(' ')
             dict[r[0]] = r[1]
-    if dict.get(participle) is not None:
+
+    for str in participle:
+      if dict.get(str) is not None:
         return dict[participle]
+        break
     else:
         return 'cant find answer'
 
