@@ -1,4 +1,4 @@
-#encoding=utf-8
+# coding=utf-8 ##以utf-8编码储存中文字符
 from __future__ import print_function, unicode_literals
 import sys
 sys.path.append("../")
@@ -34,7 +34,3 @@ def participle (content):
     print(tags)
     str = '/'.join(tags)
     return str
-
-
-context = participle('为什么不确定性越小，信息量越多，信息熵越小')
-print(context)

@@ -1,8 +1,8 @@
+# coding=utf-8 ##以utf-8编码储存中文字符
 import sys
 import json
 
 from work import match
-from work import simplyParticiple
 from work import synonym
 
 sys.path.append('../')
@@ -14,29 +14,25 @@ import time
 # socket的类型是zmq。req
 # tcp://*:5555地址要与客户端接口地址相同
 # message是从前端接收到数据
-print("hello!")
 context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:5555")
 while True:
     # Wait for next request from client
     print('服务器开始工作了')
-    date1 = socket.recv_json()
-
+    # date1 = socket.recv_json()
+    date1 = socket.recv()
     # print(date1)
-
-    message = json.loads(date1)
+    #message = json.loads(date1)
+    message = date1.decode(encoding='utf-8')
     print(message)
-    # print(message)
+    print(type(message))
     #   str = simplyParticiple.participle(message)
     list_final = synonym.result(message) #保存字符串
-    # print(type(str))
-    # print(str)
-    # Do some 'work'
-    time.sleep(0.5)  # Do some 'work'
-    # Send reply back to client
+    print(list_final)
     key = match.match(list_final)
-    # print(key)
-    # date2 = json.dumps(key)
-    # print(date2)
-    socket.send_json(key)
+    print(key)
+    print(type(key))
+    # socket.send_json(key)#
+    socket.send_string(key)
+    
