@@ -2,6 +2,7 @@
 import jieba.analyse
 import codecs,sys
 import itertools
+from work import match
 
 from io import BufferedReader
 from work import simplyParticiple
@@ -22,7 +23,7 @@ def Synonym():  #同义词函数
     return dict1
 
 
-def _synonym(txt):
+def _synonym(txt): #_synonym函数将列表中的同义词函数替换
     # final_sentence=""
     list_prim=[]
     line = simplyParticiple. participle(txt)
@@ -59,7 +60,7 @@ def combination(the_list):
         str += each_item
     return str
 
-with open("final_keyword.txt",encoding="utf_8") as fp:
+with open("final_keyword.txt",encoding="utf_8") as fp:#list_keyword用于保存初步匹配关键词
     list_keyword=[]
     for lines in fp.readlines():
         lines=lines.split()
@@ -70,7 +71,7 @@ with open("final_keyword.txt",encoding="utf_8") as fp:
 def result(txt):
     # list_final保存全排列后字符串,list_prim保存与知识点关键词匹配后的关键词，list_mid保存全排列后关键词列表
     list_final=[]
-    list_prim=getkeyword(set(_synonym(txt)),list_keyword)
+    list_prim=getkeyword(_synonym(txt),list_keyword)
     list_mid=(list(itertools.permutations(list_prim, len(list_prim))))
     for item in list_mid:
         list_final.append(combination(item))
@@ -78,4 +79,5 @@ def result(txt):
 
 # c = result('aaa')
 # print(c)
+
 
