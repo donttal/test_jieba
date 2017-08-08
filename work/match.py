@@ -13,9 +13,9 @@ def match (participle):
     for str in participle:
         if dict.get(str) is not None:
             return dict[str]
-        # break
-        else:
-            return 'cant find answer'
 
-# c = match('aaa')
+    return 'cant find answer'
+
+# list = ['定义信息','信息定义']
+# c = match(list)
 # print(c)

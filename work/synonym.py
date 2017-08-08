@@ -77,7 +77,8 @@ def result(txt):
         list_final.append(combination(item))
     return  list_final
 
-# c = result('aaa')
+# c = result('信息的定义')
 # print(c)
+
 
 
