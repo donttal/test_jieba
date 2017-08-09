@@ -7,6 +7,7 @@ from work import match
 from io import BufferedReader
 from work import simplyParticiple
 
+
 def Synonym():  #同义词函数
     seperate_word = {}
     dict1={}
@@ -23,17 +24,13 @@ def Synonym():  #同义词函数
     return dict1
 
 
-def _synonym(txt): #_synonym函数将列表中的同义词函数替换
+def _synonym(txt):
+    # synonym函数将列表中的同义词函数替换
     # final_sentence=""
     list_prim=[]
     line = simplyParticiple. participle(txt)
-    # print(line)
-    # print(type(line))
     line_2 =line.split("/")
-    # line_2=Cut_Word(txt).split("/")
-    # print(line_2)
     dict1 = Synonym()
-    # print(dict1)
     for word in line_2:
         if word in dict1:
             word = dict1[word]
@@ -70,15 +67,16 @@ with open("final_keyword.txt",encoding="utf_8") as fp:#list_keyword用于保存�
 
 def result(txt):
     # list_final保存全排列后字符串,list_prim保存与知识点关键词匹配后的关键词，list_mid保存全排列后关键词列表
-    list_final=[]
-    list_prim=getkeyword(_synonym(txt),list_keyword)
-    list_mid=(list(itertools.permutations(list_prim, len(list_prim))))
-    for item in list_mid:
-        list_final.append(combination(item))
-    return  list_final
+    # list_final=[]
+    list_prim = getkeyword(_synonym(txt), list_keyword)
+    # list_mid=(list(itertools.permutations(list_prim, len(list_prim))))
+    # for item in list_mid:
+    #     list_final.append(combination(item))
+    # return  list_final
+    return list_prim
 
-# c = result('信息的定义')
-# print(c)
+c = result('信息的定义')
+
 
 
 

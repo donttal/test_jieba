@@ -23,16 +23,17 @@ while True:
     # date1 = socket.recv_json()
     date1 = socket.recv()
     # print(date1)
-    #message = json.loads(date1)
+    # message = json.loads(date1)
     message = date1.decode(encoding='utf-8')
     print(message)
     print(type(message))
     #   str = simplyParticiple.participle(message)
-    list_final = synonym.result(message) #保存字符串
-    print(list_final)
-    key = match.match(list_final)
-    print(key)
-    print(type(key))
-    # socket.send_json(key)#
-    socket.send_string(key)
+    list_final = synonym.result(message)
+    # key = match.match(list_final)
+    # print(key)
+    # print(type(key))
+    # socket.send_json(key)
+    key = json.dumps(list_final)
+    socket.send_json(key)
+
     
