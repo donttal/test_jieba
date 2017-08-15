@@ -69,13 +69,17 @@ def result(txt):
     # list_final保存全排列后字符串,list_prim保存与知识点关键词匹配后的关键词，list_mid保存全排列后关键词列表
     # list_final=[]
     list_prim = getkeyword(_synonym(txt), list_keyword)
+    # print(_synonym(txt))
+    # print(list_prim)
     # list_mid=(list(itertools.permutations(list_prim, len(list_prim))))
     # for item in list_mid:
     #     list_final.append(combination(item))
     # return  list_final
     return list_prim
 
-c = result('信息的定义')
+c = result('什么是机器数')
+print(c)
+
 
 
 

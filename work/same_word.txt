@@ -1,3 +1,29 @@
 区分 区别 不同 相比 差别 分不清楚 优劣之分 代替
-北京 首都 京城 北京城 故都
+定义 什么是
 带符号数 机器数
+中央处理器 CPU
+DOS dos
+Windows windows Windows操作系统 windows操作系统
+UNIX UNIX操作系统
+Linux Linux操作系统
+shell Shell
+Linux Linux操作系统
+Ada ada
+Android android
+BASIC basic
+C++ c++
+Java JAVA java
+C c
+LOGO logo
+OpenMP openmp openMP
+PASCAL pascal
+UE ue
+UI ui
+C++语言 c++语言
+Java语言 java语言
+LOGO语言 logo语言
+PASCAL语言 pascal语言
+Android手机应用开发 android手机应用开发
+Unicode unicode
+UTF-8 utf-8 utf8
+Web2.0技术 Web2.0
