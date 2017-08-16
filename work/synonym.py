@@ -77,8 +77,8 @@ def result(txt):
     # return  list_final
     return list_prim
 
-c = result('什么是机器数')
-print(c)
+# c = result('进制的转换觉得有点难。')
+# print(c)
 
 
 

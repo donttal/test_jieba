@@ -29,6 +29,7 @@ while True:
     print(type(message))
     #   str = simplyParticiple.participle(message)
     list_final = synonym.result(message)
+    print(list_final)
     # key = match.match(list_final)
     # print(key)
     # print(type(key))
